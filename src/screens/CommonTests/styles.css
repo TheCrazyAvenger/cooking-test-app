@@ -1,0 +1,12 @@
+.common-test {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.button {
+  width: 100%;
+  margin-bottom: 20px !important;
+}

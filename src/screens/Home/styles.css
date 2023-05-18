@@ -1,0 +1,27 @@
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  padding: 0 100px;
+}
+
+.home__content {
+  width: 48%;
+}
+
+.home__image {
+  width: 50%;
+}
+
+.home__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__button {
+  width: 50%;
+  padding: 10px 0;
+  margin-bottom: 10px !important;
+  border-radius: 20px;
+}

@@ -1,0 +1,12 @@
+.modal {
+  overflow: scroll;
+}
+
+.modal__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  width: 100%;
+}
