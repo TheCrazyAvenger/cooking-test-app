@@ -5,7 +5,34 @@ export const allWords = [
       'a type of food made from flour, water and usually yeast mixed together and baked',
     translation: 'Хлеб',
     example: 'What would you like on your bread?',
+    img: require('../assets/images/words/bread.jpg'),
+    decription: 'You need me to make a sandwich or toast.',
+  },
+  {
+    word: 'Eggs (n., countable)',
+    definition:
+      'an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane',
+    translation: 'Яйца',
+    example: 'he liked to boast and she would egg him on shamelessly',
     img: '',
+    decription: 'People eat us fried, boiled or scrambled.',
+  },
+  {
+    word: 'Banana (n., countable)',
+    definition:
+      'a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe',
+    translation: 'Банан',
+    example: `I've spent two months in a studio—I must be bananas`,
+    img: '',
+    decription: 'I’m a long yellow fruit.',
+  },
+  {
+    word: 'Carrot (n., countable)',
+    definition: 'a tapering orange-colored root eaten as a vegetable',
+    translation: 'Морковь',
+    example: `carrots will promote cooperation over the environment far more effectively than sticks`,
+    img: '',
+    decription: 'Rabbits love this orange vegetable.',
   },
   {
     word: 'Cheese (n., uncountable)',
@@ -14,13 +41,14 @@ export const allWords = [
     translation: 'Сыр',
     example: 'a cheese sandwich',
     img: '',
+    decription: 'People like me on their pizza.',
   },
   {
     word: 'Olive oil (n., uncountable)',
     definition: 'oil produced from olives, used in cooking and on salad',
     translation: 'Оливковое масло',
     example: 'Toast the bread and add a little olive oil.',
-    img: '',
+    img: require('../assets/images/words/olive-oil.jpg'),
   },
   {
     word: 'Fish and chips',
@@ -28,15 +56,16 @@ export const allWords = [
       'a dish of fish that has been fried in batter served with chips',
     translation: 'Рыба и чипсы',
     example: 'Three portions of fish and chips, please.',
-    img: '',
+    img: require('../assets/images/words/fish-and-chips.jpg'),
   },
   {
-    word: 'Herb (n., countable)',
+    word: 'Herbs (n., countable)',
     definition:
       'a plant whose leaves, flowers or seeds are used to add taste to food',
     translation: 'Трава',
     example: 'The shop sells herbs and spices.',
-    img: '',
+    img: require('../assets/images/words/herbs.png'),
+    decription: 'People use us to add taste to their dishes.',
   },
   {
     word: 'Spices (pl.)',
@@ -44,7 +73,7 @@ export const allWords = [
       'one of the various types of powder or seed that come from plants and are used in cooking',
     translation: 'Специи',
     example: 'common spices such as black pepper and cinnamon',
-    img: '',
+    img: require('../assets/images/words/spices.jpg'),
   },
   {
     word: 'Salt (n., uncountable)',
@@ -68,7 +97,8 @@ export const allWords = [
       'a type of coffee made with hot milk and sometimes with chocolate powder on the top',
     translation: 'Каппучино',
     example: 'A cup of cappuccino',
-    img: '',
+    img: require('../assets/images/words/cappucino.jpg'),
+    decription: 'People add hot milk to coffee to make me.',
   },
   {
     word: 'Sour (adj.)',
@@ -118,14 +148,14 @@ export const allWords = [
     definition: 'a metal edge with a handle used for cutting',
     translation: 'Нож',
     example: 'A set of kitchen knives',
-    img: '',
+    img: require('../assets/images/words/knife.jpg'),
   },
   {
     word: 'Fork (n., countable)',
     definition: 'a tool with a handle and three or four sharp points',
     translation: 'Вилка',
     example: 'He put the knives and forks on the table',
-    img: '',
+    img: require('../assets/images/words/fork.jpg'),
   },
   {
     word: 'Butter (n., uncountable)',
@@ -133,7 +163,8 @@ export const allWords = [
       'soft yellow food made from cream, used in cooking and for spreading on bread',
     translation: 'Масло',
     example: 'Put some butter on the crackers, please.',
-    img: '',
+    img: require('../assets/images/words/butter.jpg'),
+    decription: 'I’m yellow or white. I’m made from milk',
   },
   {
     word: 'Fruit (countable, uncountable)',

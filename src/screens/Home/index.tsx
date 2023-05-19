@@ -1,5 +1,4 @@
 import { Button } from '@mui/material';
-import React from 'react';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
 import { Pathes } from '../../contants/routes';
@@ -31,6 +30,13 @@ export const Home = () => {
         </p>
         <div className='home__buttons'>
           <Button
+            variant='outlined'
+            className='home__button'
+            onClick={handleGoToWords}
+          >
+            Список слов
+          </Button>
+          <Button
             variant='contained'
             className='home__button'
             onClick={handleGoToCommonTest}
@@ -44,13 +50,6 @@ export const Home = () => {
             onClick={handleGoToImageTest}
           >
             Тест по картинкам
-          </Button>
-          <Button
-            variant='outlined'
-            className='home__button'
-            onClick={handleGoToWords}
-          >
-            Список слов
           </Button>
         </div>
       </div>

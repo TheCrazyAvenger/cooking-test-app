@@ -18,56 +18,67 @@ export const CompleteWordTest = () => {
   const navigate = useNavigate();
 
   const words = useMemo(
-    () =>
-      shuffle(
-        allWords.filter(
-          (item) => convertWord(item.word).split(' ').length === 1
-        )
-      ),
+    () => shuffle(allWords.filter((item) => item.decription)),
     []
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState<boolean[]>([]);
   const [value, setValue] = useState('');
+  const [clickedWord, setClickedWord] = useState<null | boolean>(null);
 
   const handleAnswer = () => {
     const nextIndex = currentIndex + 1;
-    const currentWord = convertWord(words[currentIndex].word);
+    const currentWord = words[currentIndex].word.split('(')[0];
     const result =
       value.toLocaleLowerCase().trim() ===
       currentWord.toLocaleLowerCase().trim()
         ? true
         : false;
 
-    const newScore = [...score, result];
+    setClickedWord(result);
 
-    setScore(newScore);
+    setTimeout(() => {
+      const newScore = [...score, result];
 
-    if (nextIndex === words.length) {
-      const rightAnswers = newScore.filter((item) => item).length;
-      const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+      setScore(newScore);
 
-      navigate(Pathes.results, { state: { resultMessage } });
-    } else {
-      setCurrentIndex(nextIndex);
-      setValue('');
-    }
+      if (nextIndex === words.length) {
+        const rightAnswers = newScore.filter((item) => item).length;
+        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+
+        navigate(Pathes.results, { state: { resultMessage } });
+      } else {
+        setCurrentIndex(nextIndex);
+        setValue('');
+      }
+      setClickedWord(null);
+    }, 2000);
   };
 
   return (
     <div className='image_test'>
       <Card sx={{ width: '50%' }}>
         <CardContent>
-          <Typography variant='h2'>
-            {convertWord(words[currentIndex].word).slice(0, 2)}...
+          <Typography variant='h3'>
+            {words[currentIndex].decription}{' '}
+            {convertWord(words[currentIndex].word)}
           </Typography>
-          <Typography variant='h4'>{words[currentIndex].definition}</Typography>
 
           <Typography gutterBottom variant='h5' component='div'>
             Допишите слово
           </Typography>
           <div className='variants'>
             <TextField
+              autoComplete='off'
+              style={{
+                backgroundColor:
+                  typeof clickedWord === 'boolean'
+                    ? clickedWord
+                      ? 'green'
+                      : 'red'
+                    : 'white',
+                color: typeof clickedWord === 'boolean' ? 'white' : 'black',
+              }}
               id='outlined-basic'
               label='Слово'
               variant='outlined'
@@ -76,6 +87,7 @@ export const CompleteWordTest = () => {
             />
           </div>
           <Button
+            disabled={typeof clickedWord === 'boolean'}
             style={{ marginTop: 10 }}
             variant='contained'
             onClick={handleAnswer}

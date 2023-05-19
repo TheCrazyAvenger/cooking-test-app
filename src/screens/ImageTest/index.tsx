@@ -16,10 +16,11 @@ import { Pathes } from '../../contants/routes';
 export const ImageTest = () => {
   const navigate = useNavigate();
 
-  const words = useMemo(() => shuffle(allWords), []);
+  const words = useMemo(() => shuffle(allWords.filter((word) => word.img)), []);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [variants, setVariants] = useState([]);
   const [score, setScore] = useState<boolean[]>([]);
+  const [clickedWord, setClickedWord] = useState<null | string>(null);
 
   useEffect(() => {
     const newVariants = getNewvariantsts(words, currentIndex);
@@ -33,43 +34,64 @@ export const ImageTest = () => {
     const currentWord = words[currentIndex].word;
     const result = answer === currentWord ? true : false;
 
-    const newScore = [...score, result];
+    setClickedWord(answer);
 
-    setScore(newScore);
+    setTimeout(() => {
+      const newScore = [...score, result];
 
-    if (nextIndex === words.length) {
-      const rightAnswers = newScore.filter((item) => item).length;
-      const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+      setScore(newScore);
 
-      navigate(Pathes.results, { state: { resultMessage } });
-    } else {
-      setCurrentIndex(nextIndex);
-    }
+      if (nextIndex === words.length) {
+        const rightAnswers = newScore.filter((item) => item).length;
+        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+
+        navigate(Pathes.results, { state: { resultMessage } });
+      } else {
+        setCurrentIndex(nextIndex);
+      }
+      setClickedWord(null);
+    }, 2000);
   };
 
   return (
     <div className='image_test'>
       <Card sx={{ width: '50%' }}>
         <CardMedia
-          sx={{ height: 300 }}
-          image='https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg'
-          title='green iguana'
+          sx={{ height: 350, objectFit: 'contain' }}
+          image={words[currentIndex].img}
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
             Что изображено на картинке?
           </Typography>
           <div className='variants'>
-            {variants.map((item, i) => (
-              <Button
-                key={i}
-                variant='outlined'
-                style={{ width: '100%', marginBottom: 20 }}
-                onClick={() => handleAnswer(item)}
-              >
-                {item}
-              </Button>
-            ))}
+            {variants.map((item, i) => {
+              const backgroundColor = clickedWord
+                ? item === words[currentIndex].word
+                  ? 'green'
+                  : item === clickedWord
+                  ? 'red'
+                  : 'white'
+                : 'white';
+              const color = backgroundColor !== 'white' ? 'white' : 'black';
+
+              return (
+                <Button
+                  key={i}
+                  disabled={!!clickedWord}
+                  variant='outlined'
+                  style={{
+                    width: '100%',
+                    marginBottom: 20,
+                    backgroundColor,
+                    color,
+                  }}
+                  onClick={() => handleAnswer(item)}
+                >
+                  {item}
+                </Button>
+              );
+            })}
           </div>
         </CardContent>
       </Card>

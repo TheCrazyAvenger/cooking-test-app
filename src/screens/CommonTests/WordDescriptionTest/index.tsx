@@ -15,6 +15,7 @@ export const WordDescriptionTest = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [variants, setVariants] = useState([]);
   const [score, setScore] = useState<boolean[]>([]);
+  const [clickedWord, setClickedWord] = useState<null | string>(null);
 
   useEffect(() => {
     const newVariants = getNewvariantsts(words, currentIndex);
@@ -28,18 +29,23 @@ export const WordDescriptionTest = () => {
     const currentWord = words[currentIndex].word;
     const result = answer === currentWord ? true : false;
 
-    const newScore = [...score, result];
+    setClickedWord(answer);
 
-    setScore(newScore);
+    setTimeout(() => {
+      const newScore = [...score, result];
 
-    if (nextIndex === words.length) {
-      const rightAnswers = newScore.filter((item) => item).length;
-      const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+      setScore(newScore);
 
-      navigate(Pathes.results, { state: { resultMessage } });
-    } else {
-      setCurrentIndex(nextIndex);
-    }
+      if (nextIndex === words.length) {
+        const rightAnswers = newScore.filter((item) => item).length;
+        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+
+        navigate(Pathes.results, { state: { resultMessage } });
+      } else {
+        setCurrentIndex(nextIndex);
+      }
+      setClickedWord(null);
+    }, 2000);
   };
 
   return (
@@ -52,16 +58,33 @@ export const WordDescriptionTest = () => {
             Какой слово подходит описанию?
           </Typography>
           <div className='variants'>
-            {variants.map((item, i) => (
-              <Button
-                key={i}
-                variant='outlined'
-                style={{ width: '100%', marginBottom: 20 }}
-                onClick={() => handleAnswer(item)}
-              >
-                {item}
-              </Button>
-            ))}
+            {variants.map((item, i) => {
+              const backgroundColor = clickedWord
+                ? item === words[currentIndex].word
+                  ? 'green'
+                  : item === clickedWord
+                  ? 'red'
+                  : 'white'
+                : 'white';
+              const color = backgroundColor !== 'white' ? 'white' : 'black';
+
+              return (
+                <Button
+                  key={i}
+                  disabled={!!clickedWord}
+                  variant='outlined'
+                  style={{
+                    width: '100%',
+                    marginBottom: 20,
+                    backgroundColor,
+                    color,
+                  }}
+                  onClick={() => handleAnswer(item)}
+                >
+                  {item}
+                </Button>
+              );
+            })}
           </div>
         </CardContent>
       </Card>

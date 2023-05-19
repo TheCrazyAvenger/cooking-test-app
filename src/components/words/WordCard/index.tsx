@@ -20,7 +20,11 @@ export const WordCard = ({ item }: any) => {
       <Card sx={{ width: '30%', marginBottom: 4 }}>
         <CardMedia
           sx={{ height: 140 }}
-          image='https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg'
+          image={
+            item.img
+              ? item.img
+              : 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg'
+          }
           title='green iguana'
         />
         <CardContent>
