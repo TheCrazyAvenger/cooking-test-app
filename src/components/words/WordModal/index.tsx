@@ -66,11 +66,25 @@ export const WordModal = ({ word, open, handleClose }: any) => {
           component='h2'
           mb={3}
         >
-          {word.definition}
+          {word.definition}{' '}
+          <Typography
+            id='keep-mounted-modal-title'
+            variant='body1'
+            component='h2'
+          >
+            (рус.: {word.definitionRu})
+          </Typography>
         </Typography>
         <Typography variant='subtitle1'>Пример</Typography>
         <Typography id='keep-mounted-modal-title' variant='h6' component='h2'>
-          {word.example}
+          {word.example}{' '}
+          <Typography
+            id='keep-mounted-modal-title'
+            variant='body1'
+            component='h2'
+          >
+            (рус.: {word.exampleRu})
+          </Typography>
         </Typography>
       </Box>
     </Modal>

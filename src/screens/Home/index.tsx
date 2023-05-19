@@ -41,7 +41,7 @@ export const Home = () => {
             className='home__button'
             onClick={handleGoToCommonTest}
           >
-            Стандартный Тест
+            Список тестов
           </Button>
           <Button
             variant='contained'
@@ -49,7 +49,7 @@ export const Home = () => {
             className='home__button'
             onClick={handleGoToImageTest}
           >
-            Тест по картинкам
+            Мнемотехника
           </Button>
         </div>
       </div>

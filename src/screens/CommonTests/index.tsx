@@ -38,7 +38,7 @@ export const CommonTest = () => {
             className='button'
             onClick={handleGoToWordTest}
           >
-            Стандартный тест
+            Тренировка
           </Button>
           <Button
             size='large'
@@ -46,7 +46,7 @@ export const CommonTest = () => {
             className='button'
             onClick={handleGoToWordDescriptionTest}
           >
-            Угадать слово по описанию
+            Проверка значения
           </Button>
           <Button
             size='large'
@@ -54,7 +54,7 @@ export const CommonTest = () => {
             className='button'
             onClick={handleGoToCopmleteWordTest}
           >
-            Допистать слово
+            Проверка правописания
           </Button>
           <Button
             size='large'

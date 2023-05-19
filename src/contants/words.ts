@@ -7,6 +7,9 @@ export const allWords = [
     example: 'What would you like on your bread?',
     img: require('../assets/images/words/bread.jpg'),
     decription: 'You need me to make a sandwich or toast.',
+    definitionRu:
+      'Разновидность пищи, приготовленной из муки, воды и обычно дрожжей, смешанных вместе и запеченных',
+    exampleRu: 'Что бы вы хотели намазать на свой хлеб?',
   },
   {
     word: 'Eggs (n., countable)',
@@ -16,6 +19,9 @@ export const allWords = [
     example: 'he liked to boast and she would egg him on shamelessly',
     img: '',
     decription: 'People eat us fried, boiled or scrambled.',
+    definitionRu:
+      'Овальный или круглый объект, отложенный самкой птицы, рептилии, рыбы или беспозвоночного, обычно содержащий развивающийся эмбрион. Яйца птиц заключены в меловую скорлупу, а яйца рептилий — в кожистую оболочку.',
+    exampleRu: 'он любил хвастаться, и она бесстыдно подстрекала его',
   },
   {
     word: 'Banana (n., countable)',
@@ -25,14 +31,19 @@ export const allWords = [
     example: `I've spent two months in a studio—I must be bananas`,
     img: '',
     decription: 'I’m a long yellow fruit.',
+    definitionRu:
+      'длинный изогнутый плод, который растет гроздьями и имеет мягкую мясистую мякоть и желтую кожуру при созревании',
+    exampleRu: 'Я провел два месяца в студии — должно быть, я сумасшедший.',
   },
   {
     word: 'Carrot (n., countable)',
     definition: 'a tapering orange-colored root eaten as a vegetable',
     translation: 'Морковь',
-    example: `carrots will promote cooperation over the environment far more effectively than sticks`,
+    example: `Rabbits love carrot.`,
     img: '',
     decription: 'Rabbits love this orange vegetable.',
+    definitionRu: 'сужающийся корень оранжевого цвета, который едят как овощ',
+    exampleRu: 'Зайцы любят морковь.',
   },
   {
     word: 'Cheese (n., uncountable)',
@@ -42,6 +53,9 @@ export const allWords = [
     example: 'a cheese sandwich',
     img: '',
     decription: 'People like me on their pizza.',
+    definitionRu:
+      'Вид пищи, приготовленной из молока, которое может быть как мягким, так и твердым и обычно белого или желтого цвета; особый вид этой пищи',
+    exampleRu: 'Бутерброд с сыром',
   },
   {
     word: 'Olive oil (n., uncountable)',
@@ -49,6 +63,9 @@ export const allWords = [
     translation: 'Оливковое масло',
     example: 'Toast the bread and add a little olive oil.',
     img: require('../assets/images/words/olive-oil.jpg'),
+    definitionRu:
+      'Масло, получаемое из оливок, используется в кулинарии и для заправки салатов',
+    exampleRu: 'Поджарьте хлеб и добавьте немного оливкового масла.',
   },
   {
     word: 'Fish and chips',
@@ -57,6 +74,8 @@ export const allWords = [
     translation: 'Рыба и чипсы',
     example: 'Three portions of fish and chips, please.',
     img: require('../assets/images/words/fish-and-chips.jpg'),
+    definitionRu: 'Блюдо из рыбы, обжаренной в кляре, подается с чипсами',
+    exampleRu: 'Три порции рыбы с жареной картошкой, пожалуйста.',
   },
   {
     word: 'Herbs (n., countable)',
@@ -66,6 +85,9 @@ export const allWords = [
     example: 'The shop sells herbs and spices.',
     img: require('../assets/images/words/herbs.png'),
     decription: 'People use us to add taste to their dishes.',
+    definitionRu:
+      'Растение, листья, цветы или семена которого используются для придания вкуса пище',
+    exampleRu: 'В магазине продаются травы и специи.',
   },
   {
     word: 'Spices (pl.)',
@@ -74,6 +96,9 @@ export const allWords = [
     translation: 'Специи',
     example: 'common spices such as black pepper and cinnamon',
     img: require('../assets/images/words/spices.jpg'),
+    definitionRu:
+      'Один из различных видов порошка или семян, которые получают из растений и используют в кулинарии',
+    exampleRu: 'Распространенные специи, такие как черный перец и корица',
   },
   {
     word: 'Salt (n., uncountable)',
@@ -82,6 +107,9 @@ export const allWords = [
     translation: 'Соль',
     example: 'Season with salt and pepper',
     img: '',
+    definitionRu:
+      'Белое вещество, которое добавляют в пищу для придания ей лучшего вкуса',
+    exampleRu: 'Приправьте солью и перцем',
   },
   {
     word: 'Side dish (n., countable)',
@@ -90,6 +118,9 @@ export const allWords = [
     translation: 'Гарнир',
     example: 'A side dish of fresh vegetables',
     img: '',
+    definitionRu:
+      'Небольшое количество еды, например салата, подается к основному блюду',
+    exampleRu: 'Гарнир из свежих овощей',
   },
   {
     word: 'Cappuccino',
@@ -99,6 +130,9 @@ export const allWords = [
     example: 'A cup of cappuccino',
     img: require('../assets/images/words/cappucino.jpg'),
     decription: 'People add hot milk to coffee to make me.',
+    definitionRu:
+      'Разновидность кофе, приготовляемого с горячим молоком и иногда с добавлением шоколадной пудры сверху',
+    exampleRu: 'Чашечка капучино',
   },
   {
     word: 'Sour (adj.)',
@@ -107,6 +141,9 @@ export const allWords = [
     translation: 'Кислый',
     example: 'The sauce tasted very sour',
     img: '',
+    definitionRu:
+      'Имеющий вкус лимона или фрукта, который еще не готов к употреблению',
+    exampleRu: 'Соус был очень кислым на вкус',
   },
   {
     word: 'Snack (n., uncountable)',
@@ -114,6 +151,9 @@ export const allWords = [
     translation: 'Перекус',
     example: 'I only have time for a snack at lunchtime',
     img: '',
+    definitionRu:
+      'Небольшой прием пищи или ее количество, обычно съедаемое в спешке',
+    exampleRu: 'У меня есть время перекусить только в обеденный перерыв',
   },
   {
     word: 'Picnic (n., countable)',
@@ -121,6 +161,9 @@ export const allWords = [
     translation: 'Пикник',
     example: `It's a nice day. Let's go for a picnic.`,
     img: '',
+    definitionRu:
+      'Когда люди упаковывают еду и берут ее с собой, чтобы поесть на открытом воздухе',
+    exampleRu: 'Сегодня хороший день. Давай устроим пикник.',
   },
   {
     word: 'Healthy (adj.)',
@@ -128,6 +171,9 @@ export const allWords = [
     translation: 'Здоровый',
     example: 'Stay healthy by eating well and exercising regularly',
     img: '',
+    definitionRu: 'Обладающий хорошим здоровьем и маловероятный к заболеванию',
+    exampleRu:
+      'Оставайтесь здоровыми, правильно питаясь и регулярно занимаясь спортом',
   },
   {
     word: 'Unhealthy (adj.)',
@@ -135,6 +181,10 @@ export const allWords = [
     translation: 'Нездоровый',
     example: 'Doctors say too many teenagers adopt an unhealthy lifestyle',
     img: '',
+    definitionRu:
+      'Не обладающий хорошим здоровьем; демонстрирующий отсутствие хорошего здоровья',
+    exampleRu:
+      'Врачи говорят, что слишком много подростков ведут нездоровый образ жизни',
   },
   {
     word: 'Vegetarian (n., countable)',
@@ -142,6 +192,8 @@ export const allWords = [
     translation: 'Вегетарианец',
     example: 'Is she a vegetarian?',
     img: '',
+    definitionRu: 'Человек, который не ест мясо или рыбу  ',
+    exampleRu: 'Она вегетарианка?',
   },
   {
     word: 'Knife (n., countable)',
@@ -149,6 +201,8 @@ export const allWords = [
     translation: 'Нож',
     example: 'A set of kitchen knives',
     img: require('../assets/images/words/knife.jpg'),
+    definitionRu: 'Металлическая кромка с ручкой, используемая для резки',
+    exampleRu: 'Набор кухонных ножей',
   },
   {
     word: 'Fork (n., countable)',
@@ -156,6 +210,8 @@ export const allWords = [
     translation: 'Вилка',
     example: 'He put the knives and forks on the table',
     img: require('../assets/images/words/fork.jpg'),
+    definitionRu: 'Инструмент с ручкой и тремя или четырьмя острыми концами',
+    exampleRu: 'Он положил ножи и вилки на стол',
   },
   {
     word: 'Butter (n., uncountable)',
@@ -165,6 +221,9 @@ export const allWords = [
     example: 'Put some butter on the crackers, please.',
     img: require('../assets/images/words/butter.jpg'),
     decription: 'I’m yellow or white. I’m made from milk',
+    definitionRu:
+      'Мягкое желтое блюдо из сливок, используемое в кулинарии и для намазывания на хлеб',
+    exampleRu: 'Намажьте крекеры маслом, пожалуйста.',
   },
   {
     word: 'Fruit (countable, uncountable)',
@@ -172,6 +231,8 @@ export const allWords = [
     translation: 'Фрукт',
     example: 'Citrus fruits, such as oranges and lemons',
     img: '',
+    definitionRu: 'Часть растения, состоящая из одного или нескольких семян',
+    exampleRu: 'Цитрусовые, такие как апельсины и лимоны',
   },
   {
     word: 'Salad (countable, uncountable)',
@@ -180,5 +241,8 @@ export const allWords = [
     translation: 'Салат',
     example: 'A salad bowl ( a large bowl for serving salad in)',
     img: '',
+    definitionRu:
+      'Смесь овощей, таких как листья салата, помидоры и огурцы, обычно подается с другими продуктами как часть трапезы',
+    exampleRu: 'Салатница (большая миска для подачи салата)',
   },
 ];
