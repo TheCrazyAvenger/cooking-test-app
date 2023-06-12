@@ -9,6 +9,8 @@ import { CommonTest } from '../../screens/CommonTests';
 import { WordTest } from '../../screens/CommonTests/WordTest';
 import { WordDescriptionTest } from '../../screens/CommonTests/WordDescriptionTest';
 import { CompleteWordTest } from '../../screens/CommonTests/ComplateWordTest';
+import { OddTest } from '../../screens/CommonTests/OddTest';
+import { CorrectSentencesTest } from '../../screens/CommonTests/CorrectSentencesTest';
 
 export const RootNavigator = () => {
   return (
@@ -21,6 +23,11 @@ export const RootNavigator = () => {
       <Route path={Pathes.wordTest} element={<WordTest />} />
       <Route path={Pathes.descriptionTest} element={<WordDescriptionTest />} />
       <Route path={Pathes.completeWordTest} element={<CompleteWordTest />} />
+      <Route path={Pathes.oddTest} element={<OddTest />} />
+      <Route
+        path={Pathes.correctSentences}
+        element={<CorrectSentencesTest />}
+      />
     </Routes>
   );
 };

@@ -3,23 +3,22 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button, Card, CardContent, Typography } from '@mui/material';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
-import { getNewWordTestariantsts } from '../../../utils/getNewWordTestariants';
-import { allWords } from '../../../contants/words';
 import { Pathes } from '../../../contants/routes';
 import { shuffle } from '../../../utils/shuffle';
+import { oddWords } from '../../../contants/oddWords';
+import { getNewWordTestariants } from '../../../utils/getNewOddWordsVariants';
 
-export const WordTest = () => {
+export const OddTest = () => {
   const navigate = useNavigate();
 
   const [results, setResults] = useState<any>([]);
-  const words = useMemo(() => shuffle(allWords), []);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [variants, setVariants] = useState([]);
   const [score, setScore] = useState<boolean[]>([]);
   const [clickedWord, setClickedWord] = useState<null | string>(null);
 
   useEffect(() => {
-    const newVariants = getNewWordTestariantsts(words, currentIndex);
+    const newVariants = getNewWordTestariants(oddWords, currentIndex);
 
     setVariants(newVariants);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,7 +26,7 @@ export const WordTest = () => {
 
   const handleAnswer = (answer: string) => {
     const nextIndex = currentIndex + 1;
-    const currentWord = words[currentIndex].translation;
+    const currentWord = oddWords[currentIndex].wrong;
     const result = answer === currentWord ? true : false;
 
     setClickedWord(answer);
@@ -36,7 +35,7 @@ export const WordTest = () => {
       const newScore = [...score, result];
 
       const resObj = {
-        word: words[currentIndex].word,
+        word: shuffle(oddWords[currentIndex].words).join(', '),
         answer,
         rightAnswer: currentWord,
         color: result ? 'green' : 'red',
@@ -47,9 +46,9 @@ export const WordTest = () => {
 
       setScore(newScore);
 
-      if (nextIndex === words.length) {
+      if (nextIndex === oddWords.length) {
         const rightAnswers = newScore.filter((item) => item).length;
-        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${oddWords.length}`;
 
         navigate(Pathes.results, {
           state: { resultMessage, result: newResults },
@@ -61,19 +60,24 @@ export const WordTest = () => {
     }, 2000);
   };
 
+  const title = useMemo(
+    () => shuffle(oddWords[currentIndex].words).join(', '),
+    [currentIndex]
+  );
+
   return (
     <div className='image_test'>
       <Card sx={{ width: '50%' }}>
         <CardContent>
-          <Typography variant='h4'>{words[currentIndex].word}</Typography>
+          <Typography variant='h4'>{title}</Typography>
 
           <Typography gutterBottom variant='h5' component='div'>
-            Какой перевод будет правильным?
+            Что из этого лишнее?
           </Typography>
           <div className='variants'>
             {variants.map((item, i) => {
               const backgroundColor = clickedWord
-                ? item === words[currentIndex].translation
+                ? item === oddWords[currentIndex].wrong
                   ? 'green'
                   : item === clickedWord
                   ? 'red'

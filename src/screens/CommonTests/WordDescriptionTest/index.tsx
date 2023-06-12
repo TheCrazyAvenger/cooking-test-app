@@ -11,6 +11,7 @@ import { getNewvariantsts } from '../../../utils/getNewvariants';
 export const WordDescriptionTest = () => {
   const navigate = useNavigate();
 
+  const [results, setResults] = useState<any>([]);
   const words = useMemo(() => shuffle(allWords), []);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [variants, setVariants] = useState([]);
@@ -29,6 +30,16 @@ export const WordDescriptionTest = () => {
     const currentWord = words[currentIndex].word;
     const result = answer === currentWord ? true : false;
 
+    const resObj = {
+      word: words[currentIndex].definition,
+      answer,
+      rightAnswer: currentWord,
+      color: result ? 'green' : 'red',
+    };
+    const newResults = [...results, resObj];
+
+    setResults(newResults);
+
     setClickedWord(answer);
 
     setTimeout(() => {
@@ -40,7 +51,9 @@ export const WordDescriptionTest = () => {
         const rightAnswers = newScore.filter((item) => item).length;
         const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
 
-        navigate(Pathes.results, { state: { resultMessage } });
+        navigate(Pathes.results, {
+          state: { resultMessage, result: newResults },
+        });
       } else {
         setCurrentIndex(nextIndex);
       }
@@ -52,10 +65,10 @@ export const WordDescriptionTest = () => {
     <div className='image_test'>
       <Card sx={{ width: '50%' }}>
         <CardContent>
-          <Typography variant='h2'>{words[currentIndex].definition}</Typography>
+          <Typography variant='h4'>{words[currentIndex].definition}</Typography>
 
           <Typography gutterBottom variant='h5' component='div'>
-            Какой слово подходит описанию?
+            Какое слово подходит описанию?
           </Typography>
           <div className='variants'>
             {variants.map((item, i) => {

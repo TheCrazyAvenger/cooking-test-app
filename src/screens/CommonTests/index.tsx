@@ -19,6 +19,12 @@ export const CommonTest = () => {
   const handleGoToCopmleteWordTest = () => {
     navigate(Pathes.completeWordTest);
   };
+  const handleGoToOddTest = () => {
+    navigate(Pathes.oddTest);
+  };
+  const handleGoToCorrectSentencesTest = () => {
+    navigate(Pathes.correctSentences);
+  };
 
   return (
     <div className='common-test'>
@@ -38,7 +44,7 @@ export const CommonTest = () => {
             className='button'
             onClick={handleGoToWordTest}
           >
-            Тренировка
+            Тренировка на перевод
           </Button>
           <Button
             size='large'
@@ -58,8 +64,24 @@ export const CommonTest = () => {
           </Button>
           <Button
             size='large'
-            variant='outlined'
+            variant='contained'
             className='button'
+            onClick={handleGoToOddTest}
+          >
+            Лишнее слово
+          </Button>
+          <Button
+            size='large'
+            variant='contained'
+            className='button'
+            onClick={handleGoToCorrectSentencesTest}
+          >
+            Составить предложения
+          </Button>
+          <Button
+            size='large'
+            variant='outlined'
+            className='button last'
             onClick={handleGoBack}
           >
             Назад

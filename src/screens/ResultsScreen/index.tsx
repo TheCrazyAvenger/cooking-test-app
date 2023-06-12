@@ -15,6 +15,27 @@ export const ResultsScreen = () => {
     window.location.replace('/');
   };
 
+  const RenderAnswers = () => {
+    if (state.result) {
+      return state.result.map((item: any, index: number) => (
+        <Card
+          style={{ backgroundColor: item.color, marginBottom: 20 }}
+          key={index.toString()}
+        >
+          <CardContent>
+            <Typography color={'white'}>{item.word}</Typography>
+            <Typography color={'white'}>
+              Правильный ответ: {item.rightAnswer}
+            </Typography>
+            <Typography color={'white'}>Ваш ответ: {item.answer}</Typography>
+          </CardContent>
+        </Card>
+      ));
+    } else {
+      return <></>;
+    }
+  };
+
   return (
     <div className='results'>
       <Card sx={{ width: '70%' }}>
@@ -25,9 +46,15 @@ export const ResultsScreen = () => {
           <Typography variant='h5' color='text.secondary'>
             {state.resultMessage}
           </Typography>
+          <RenderAnswers />
         </CardContent>
         <CardActions>
-          <Button size='large' variant='contained' onClick={handleHome}>
+          <Button
+            size='large'
+            style={{ width: '100%' }}
+            variant='contained'
+            onClick={handleHome}
+          >
             На главную страницу
           </Button>
         </CardActions>

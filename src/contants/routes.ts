@@ -7,4 +7,6 @@ export enum Pathes {
   descriptionTest = '/word-decription-test',
   results = '/results',
   commonTest = '/test',
+  oddTest = '/odd-test',
+  correctSentences = '/correct-sentences',
 }

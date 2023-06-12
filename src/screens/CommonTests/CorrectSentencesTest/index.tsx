@@ -1,5 +1,4 @@
-import { useMemo, useState } from 'react';
-
+import { useState } from 'react';
 import {
   Button,
   Card,
@@ -9,19 +8,14 @@ import {
 } from '@mui/material';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
-import { allWords } from '../../../contants/words';
 import { Pathes } from '../../../contants/routes';
-import { shuffle } from '../../../utils/shuffle';
-import { convertWord } from '../../../utils/convertWord';
+import { correctSentences } from '../../../contants/correctSentences';
 
-export const CompleteWordTest = () => {
+export const CorrectSentencesTest = () => {
   const navigate = useNavigate();
 
   const [results, setResults] = useState<any>([]);
-  const words = useMemo(
-    () => shuffle(allWords.filter((item) => item.decription)),
-    []
-  );
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState<boolean[]>([]);
   const [value, setValue] = useState('');
@@ -29,7 +23,7 @@ export const CompleteWordTest = () => {
 
   const handleAnswer = () => {
     const nextIndex = currentIndex + 1;
-    const currentWord = words[currentIndex].word.split('(')[0];
+    const currentWord = correctSentences[currentIndex].answer;
     const result =
       value.toLocaleLowerCase().trim() ===
       currentWord.toLocaleLowerCase().trim()
@@ -37,7 +31,7 @@ export const CompleteWordTest = () => {
         : false;
 
     const resObj = {
-      word: words[currentIndex].decription,
+      word: correctSentences[currentIndex].words,
       answer: value,
       rightAnswer: currentWord,
       color: result ? 'green' : 'red',
@@ -53,9 +47,9 @@ export const CompleteWordTest = () => {
 
       setScore(newScore);
 
-      if (nextIndex === words.length) {
+      if (nextIndex === correctSentences.length) {
         const rightAnswers = newScore.filter((item) => item).length;
-        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${words.length}`;
+        const resultMessage = `Вы ответили правильно на ${rightAnswers} из ${correctSentences.length}`;
 
         navigate(Pathes.results, {
           state: { resultMessage, result: newResults },
@@ -72,13 +66,12 @@ export const CompleteWordTest = () => {
     <div className='image_test'>
       <Card sx={{ width: '50%' }}>
         <CardContent>
-          <Typography variant='h3'>
-            {words[currentIndex].decription}{' '}
-            {convertWord(words[currentIndex].word)}
+          <Typography variant='h4'>
+            {correctSentences[currentIndex].words}
           </Typography>
 
           <Typography gutterBottom variant='h5' component='div'>
-            Допишите слово
+            Cоставьте предложения
           </Typography>
           <div className='variants'>
             <TextField

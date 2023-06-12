@@ -17,7 +17,7 @@ export const allWords = [
       'an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane',
     translation: 'Яйца',
     example: 'he liked to boast and she would egg him on shamelessly',
-    img: '',
+    img: require('../assets/images/words/eggs.png'),
     decription: 'People eat us fried, boiled or scrambled.',
     definitionRu:
       'Овальный или круглый объект, отложенный самкой птицы, рептилии, рыбы или беспозвоночного, обычно содержащий развивающийся эмбрион. Яйца птиц заключены в меловую скорлупу, а яйца рептилий — в кожистую оболочку.',
@@ -29,7 +29,7 @@ export const allWords = [
       'a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe',
     translation: 'Банан',
     example: `I've spent two months in a studio—I must be bananas`,
-    img: '',
+    img: require('../assets/images/words/banana.png'),
     decription: 'I’m a long yellow fruit.',
     definitionRu:
       'длинный изогнутый плод, который растет гроздьями и имеет мягкую мясистую мякоть и желтую кожуру при созревании',
@@ -40,7 +40,7 @@ export const allWords = [
     definition: 'a tapering orange-colored root eaten as a vegetable',
     translation: 'Морковь',
     example: `Rabbits love carrot.`,
-    img: '',
+    img: require('../assets/images/words/carrot.jpg'),
     decription: 'Rabbits love this orange vegetable.',
     definitionRu: 'сужающийся корень оранжевого цвета, который едят как овощ',
     exampleRu: 'Зайцы любят морковь.',
@@ -51,7 +51,7 @@ export const allWords = [
       'a type of food made from milk that can be either soft or hard and is usually white or yellow in colour; a particular type of this food',
     translation: 'Сыр',
     example: 'a cheese sandwich',
-    img: '',
+    img: require('../assets/images/words/cheese.png'),
     decription: 'People like me on their pizza.',
     definitionRu:
       'Вид пищи, приготовленной из молока, которое может быть как мягким, так и твердым и обычно белого или желтого цвета; особый вид этой пищи',
@@ -106,7 +106,7 @@ export const allWords = [
       'a white substance that is added to food to make it taste better',
     translation: 'Соль',
     example: 'Season with salt and pepper',
-    img: '',
+    img: require('../assets/images/words/salt.png'),
     definitionRu:
       'Белое вещество, которое добавляют в пищу для придания ей лучшего вкуса',
     exampleRu: 'Приправьте солью и перцем',
@@ -117,7 +117,7 @@ export const allWords = [
       'a small amount of food, for example a salad, served with the main meal',
     translation: 'Гарнир',
     example: 'A side dish of fresh vegetables',
-    img: '',
+    img: require('../assets/images/words/sidedish.png'),
     definitionRu:
       'Небольшое количество еды, например салата, подается к основному блюду',
     exampleRu: 'Гарнир из свежих овощей',
@@ -140,7 +140,7 @@ export const allWords = [
       'having a taste like that of a lemon or of fruit that is not ready to eat',
     translation: 'Кислый',
     example: 'The sauce tasted very sour',
-    img: '',
+    img: require('../assets/images/words/sour.png'),
     definitionRu:
       'Имеющий вкус лимона или фрукта, который еще не готов к употреблению',
     exampleRu: 'Соус был очень кислым на вкус',
@@ -150,7 +150,7 @@ export const allWords = [
     definition: 'a small meal or amount of food, usually eaten in a hurry',
     translation: 'Перекус',
     example: 'I only have time for a snack at lunchtime',
-    img: '',
+    img: require('../assets/images/words/snack.png'),
     definitionRu:
       'Небольшой прием пищи или ее количество, обычно съедаемое в спешке',
     exampleRu: 'У меня есть время перекусить только в обеденный перерыв',
@@ -160,7 +160,7 @@ export const allWords = [
     definition: 'when people pack a meal and take it to eat outdoors',
     translation: 'Пикник',
     example: `It's a nice day. Let's go for a picnic.`,
-    img: '',
+    img: require('../assets/images/words/picnic.png'),
     definitionRu:
       'Когда люди упаковывают еду и берут ее с собой, чтобы поесть на открытом воздухе',
     exampleRu: 'Сегодня хороший день. Давай устроим пикник.',
@@ -170,7 +170,7 @@ export const allWords = [
     definition: 'having good health and not likely to become ill',
     translation: 'Здоровый',
     example: 'Stay healthy by eating well and exercising regularly',
-    img: '',
+    img: require('../assets/images/words/healthy.png'),
     definitionRu: 'Обладающий хорошим здоровьем и маловероятный к заболеванию',
     exampleRu:
       'Оставайтесь здоровыми, правильно питаясь и регулярно занимаясь спортом',
@@ -180,7 +180,7 @@ export const allWords = [
     definition: 'not having good health; showing a lack of good health',
     translation: 'Нездоровый',
     example: 'Doctors say too many teenagers adopt an unhealthy lifestyle',
-    img: '',
+    img: require('../assets/images/words/unhealthy.png'),
     definitionRu:
       'Не обладающий хорошим здоровьем; демонстрирующий отсутствие хорошего здоровья',
     exampleRu:
@@ -191,7 +191,7 @@ export const allWords = [
     definition: 'a person who does not eat meat or fish',
     translation: 'Вегетарианец',
     example: 'Is she a vegetarian?',
-    img: '',
+    img: require('../assets/images/words/vegan.png'),
     definitionRu: 'Человек, который не ест мясо или рыбу  ',
     exampleRu: 'Она вегетарианка?',
   },
@@ -209,7 +209,7 @@ export const allWords = [
     definition: 'a tool with a handle and three or four sharp points',
     translation: 'Вилка',
     example: 'He put the knives and forks on the table',
-    img: require('../assets/images/words/fork.jpg'),
+    img: require('../assets/images/words/fork.png'),
     definitionRu: 'Инструмент с ручкой и тремя или четырьмя острыми концами',
     exampleRu: 'Он положил ножи и вилки на стол',
   },
@@ -230,7 +230,7 @@ export const allWords = [
     definition: 'the part of a plant that consists of one or more seeds',
     translation: 'Фрукт',
     example: 'Citrus fruits, such as oranges and lemons',
-    img: '',
+    img: require('../assets/images/words/fruits.jpg'),
     definitionRu: 'Часть растения, состоящая из одного или нескольких семян',
     exampleRu: 'Цитрусовые, такие как апельсины и лимоны',
   },
@@ -240,7 +240,7 @@ export const allWords = [
       'a mixture of vegetables such as lettuce, tomato and cucumber, usually served with other food as part of a meal',
     translation: 'Салат',
     example: 'A salad bowl ( a large bowl for serving salad in)',
-    img: '',
+    img: require('../assets/images/words/salad.png'),
     definitionRu:
       'Смесь овощей, таких как листья салата, помидоры и огурцы, обычно подается с другими продуктами как часть трапезы',
     exampleRu: 'Салатница (большая миска для подачи салата)',
