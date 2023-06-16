@@ -4,6 +4,7 @@ import { shuffle } from '../../utils/shuffle';
 import {
   Button,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
   Typography,
@@ -12,6 +13,7 @@ import './styles.css';
 import { getNewvariantsts } from '../../utils/getNewvariants';
 import { useNavigate } from 'react-router-dom';
 import { Pathes } from '../../contants/routes';
+import { HomeButton } from '../../components/common/HomeButton';
 
 export const ImageTest = () => {
   const navigate = useNavigate();
@@ -94,6 +96,9 @@ export const ImageTest = () => {
             })}
           </div>
         </CardContent>
+        <CardActions>
+          <HomeButton />
+        </CardActions>
       </Card>
     </div>
   );

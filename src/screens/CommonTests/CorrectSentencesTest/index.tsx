@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   Button,
   Card,
+  CardActions,
   CardContent,
   TextField,
   Typography,
@@ -10,6 +11,7 @@ import './styles.css';
 import { useNavigate } from 'react-router-dom';
 import { Pathes } from '../../../contants/routes';
 import { correctSentences } from '../../../contants/correctSentences';
+import { HomeButton } from '../../../components/common/HomeButton';
 
 export const CorrectSentencesTest = () => {
   const navigate = useNavigate();
@@ -101,6 +103,9 @@ export const CorrectSentencesTest = () => {
             Отправить
           </Button>
         </CardContent>
+        <CardActions>
+          <HomeButton />
+        </CardActions>
       </Card>
     </div>
   );

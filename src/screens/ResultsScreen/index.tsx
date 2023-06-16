@@ -1,19 +1,10 @@
 import { useLocation } from 'react-router-dom';
 import './styles.css';
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from '@mui/material';
+import { Card, CardActions, CardContent, Typography } from '@mui/material';
+import { HomeButton } from '../../components/common/HomeButton';
 
 export const ResultsScreen = () => {
   const { state }: any = useLocation();
-
-  const handleHome = () => {
-    window.location.replace('/');
-  };
 
   const RenderAnswers = () => {
     if (state.result) {
@@ -49,14 +40,7 @@ export const ResultsScreen = () => {
           <RenderAnswers />
         </CardContent>
         <CardActions>
-          <Button
-            size='large'
-            style={{ width: '100%' }}
-            variant='contained'
-            onClick={handleHome}
-          >
-            На главную страницу
-          </Button>
+          <HomeButton />
         </CardActions>
       </Card>
     </div>

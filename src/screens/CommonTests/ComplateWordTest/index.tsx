@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import {
   Button,
   Card,
+  CardActions,
   CardContent,
   TextField,
   Typography,
@@ -13,6 +14,7 @@ import { allWords } from '../../../contants/words';
 import { Pathes } from '../../../contants/routes';
 import { shuffle } from '../../../utils/shuffle';
 import { convertWord } from '../../../utils/convertWord';
+import { HomeButton } from '../../../components/common/HomeButton';
 
 export const CompleteWordTest = () => {
   const navigate = useNavigate();
@@ -108,6 +110,9 @@ export const CompleteWordTest = () => {
             Отправить
           </Button>
         </CardContent>
+        <CardActions>
+          <HomeButton />
+        </CardActions>
       </Card>
     </div>
   );

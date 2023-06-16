@@ -1,12 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { Button, Card, CardContent, Typography } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from '@mui/material';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
 import { allWords } from '../../../contants/words';
 import { Pathes } from '../../../contants/routes';
 import { shuffle } from '../../../utils/shuffle';
 import { getNewvariantsts } from '../../../utils/getNewvariants';
+import { HomeButton } from '../../../components/common/HomeButton';
 
 export const WordDescriptionTest = () => {
   const navigate = useNavigate();
@@ -100,6 +107,9 @@ export const WordDescriptionTest = () => {
             })}
           </div>
         </CardContent>
+        <CardActions>
+          <HomeButton />
+        </CardActions>
       </Card>
     </div>
   );
